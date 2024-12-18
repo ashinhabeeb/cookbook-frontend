@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4 p-5 d-flex flex-column justify-content-center align-items-center">
+            <h1 class="text-center">Login</h1>
+            <p>More than 100+ recipes around the world</p>
+            <form [formGroup]="loginForm" (ngSubmit)="login()" class="shadow p-5 my-5 border w-100">
+                <h2 class="text-center"><i class="fa-solid fa-kitchen-set me-2"></i>COOKBOOK</h2>
+               <div class="mt-3 mb-4"> <input formControlName="email" name="uemail" type="text" placeholder="email" class="form-control w-100 ">
+               @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+                <span class="text-danger">*Invalid Email Id</span>
+               }
+               </div>
+               <div class="mb-4"> <input formControlName="password" name="upassword" type="text" placeholder="password" class="form-control w-100 ">
+                @if (loginForm.get('password')?.errors && loginForm.get('password')?.touched) {
+                    <span class="text-danger">*Invalid password</span>
+                   }
+                </div>
+                <button class="btn btn-success w-100 mb-3 ">Login</button>
+                <span>New User ? <a routerLink="/register" class="text-success" >Register</a></span>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

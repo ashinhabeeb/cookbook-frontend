@@ -1,0 +1,111 @@
+<app-header></app-header>
+
+
+<div class="container">
+    <div class="row p-5 bg-success text-light">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 d-flex flex-column justify-content-center align-items-center p-5">
+            <h1 class=" text center mt-3">Contact Us</h1>
+            <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sit deleniti fuga aliquid
+                voluptates ipsum porro, et, consequuntur exercitationem distinctio facere velit, numquam Lorem, ipsu.
+            </p>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <!-- get in touch -->
+
+    <div class="row w-100">
+        <div class="col-md-2"></div>
+
+        <div class="col-md-4 d-flex flex-column  p-5">
+            <h1>Get in Touch</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, officiis voluptatibus. Similique totam
+                illum in distinctio minus nesciunt eum!</p>
+
+            <div class="d-flex mt-4">
+                <div class="bg-success text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+                    style="width: 40px;height: 40px;">
+                    <i class="fa-solid fa-location"></i>
+                </div>
+                <div class="ms-3">
+                    <h4>Address</h4>
+                    <p>NYC 456, PO Berlin</p>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <div class="bg-success text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+                    style="width: 40px;height: 40px;">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="ms-3">
+                    <h4>Email</h4>
+                    <p>{{demomail}}</p>
+                </div>
+            </div>
+
+            <div class="d-flex ">
+                <div class="bg-success text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+                    style="width: 40px;height: 40px;">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="ms-3">
+                    <h4>Phone No</h4>
+                    <p>9746926482</p>
+                </div>
+            </div>
+
+            <hr>
+            <h4>Follow us</h4>
+        
+
+            <div class="d-flex mt-4">
+
+                <div class="bg-success text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+                style="width: 40px;height: 40px;">
+                <i class="fa-brands fa-facebook"></i>
+               </div>
+
+               <div class=" ms-3 bg-success text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+               style="width: 40px;height: 40px;">
+               <i class="fa-brands fa-youtube"></i>
+               </div>
+
+
+               <div class="ms-3 bg-success text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+               style="width: 40px;height: 40px;">
+               <i class="fa-brands fa-instagram"></i>
+               </div>
+
+               <div class="ms-3 bg-success text-white rounded-circle d-flex justify-content-center align-items-center p-2"
+               style="width: 40px;height: 40px;">
+               <i class="fa-brands fa-twitter"></i>
+              </div>
+            
+            </div>
+
+        </div>
+
+        <div class="col-md-2"></div>
+
+        <form [formGroup]="testimonialGroup" (ngSubmit)="addTestimonial()" class="col-md-4 p-5 ">
+            <div class="shadow p-5 d-flex flex-column justify-content-between align-items-center ">
+                <h1 class="text-center">client testimony</h1>
+                <input formControlName="name" name="uname" type="text" placeholder="name" class="form-control my-3">
+                <input formControlName="email" name="uemai"
+                type="text" placeholder="email" class="form-control mb-3">
+                <textarea formControlName="message" name="message" id="" class="form-control mb-3" placeholder="message"></textarea>
+                <p class="text-secondary">By submiting you are agreeing to the terms and condtitions of our website. we
+                    may use your details in our site</p>
+                <button class="btn btn-success ">submit</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="container my-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62865.55832720431!2d76.30948096449143!3d10.008813464707435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080c8e94a07a07%3A0x49921cdfae82660!2sKakkanad%2C%20Kerala!5e0!3m2!1sen!2sin!4v1732168083793!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+    </div>
+</div>
+

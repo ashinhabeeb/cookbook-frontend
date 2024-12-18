@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-5 p-5 d-flex flex-column justify-content-center align-items-center">
+            <form [formGroup]="registerForm" (ngSubmit)="register()" class="shadow p-5 my-5 border w-100">
+                <h2 class="text-center"><i class="fa-solid fa-kitchen-set me-2"></i>COOKBOOK</h2>
+                <div class="mt-5 mb-4">
+                    <input formControlName="username" name="uname" type="text" placeholder="username"
+                        class="form-control w-100 ">
+                    @if (registerForm.get('username')?.errors && registerForm.get('username')?.touched)
+                     {
+                    <span class="text-danger">*Invalid username</span>
+                    }
+                </div>
+                <div class="mt-3 mb-4">
+                    <input formControlName="email" name="uemail" type="text" placeholder="email"
+                        class="form-control w-100 ">
+                    @if (registerForm.get('email')?.errors && registerForm.get('email')?.touched)
+                     {
+                    <span class="text-danger">*Invalid Email id</span>
+                    }
+                </div>
+                <div class="mb-4">
+                    <input formControlName="password" name="upassword" type="text" placeholder="password"
+                        class="form-control w-100 ">
+                    @if (registerForm.get('password')?.errors && registerForm.get('password')?.touched)
+                     {
+                    <span class="text-danger">*Invalid password</span>
+                    }
+                </div>
+                <button type="submit" class="btn btn-success w-100 mb-3">Register</button>
+                <span>Already a User ? <a routerLink="/login" class="text-success">Login</a></span>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-5 d-flex flex-column justify-content-center align-items-center ">
+            <div>
+                <h1>Create an Account</h1>
+                <p>what you will get?</p>
+                <ul class="mt-3">
+                    <li>Different Recipe</li>
+                    <li>Easy way to cook</li>
+                    <li>Save your favourite recipe</li>
+                    <li>Download your recipe</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

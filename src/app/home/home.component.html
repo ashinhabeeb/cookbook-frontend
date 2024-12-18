@@ -1,0 +1,99 @@
+<app-header></app-header>
+
+    <div class="container p-5 bg-success ">
+    
+    
+        <div class="row w-100 d-flex justify-content-center align-items-center">
+            <div class="col-md-2"></div>
+            <div class="col-md-4 p-5">
+                <h1 class="text-light">The Easiest Way To Make Your Favourite Meal</h1>
+                <p class="mt-4 text-light">Discover 100+ recipes in your hand with the best recipes.Hwlp you to find easiest
+                    way to cook.</p>
+                <button class="btn btn-warning p-2" routerLink="/recipes">Explore Recipes</button>
+            </div>
+            <div class="col-md-6 d-md-flex justify-content-center align-items-center">
+                <img src="home-plate.png" alt="no image" style="height: 300px; width:400px;" class="landingImg ">
+            </div>
+        </div>
+    
+    
+    
+    </div>
+    
+    <!-- popular recipe -->
+    
+ 
+       <div class="container">
+            <div class="row w-100 my-5 container p-5">
+                <h1>Popular Recipe of the Week</h1>
+                <div class="d-flex justify-content-between">
+                    <p>Out most Popular Recipe of the Week</p>
+                    <a routerLink="/recipes">view all</a>
+                </div>
+            </div>
+    
+            <div class="row w-100 ">
+
+                @if(allRecipes.length>0){
+                   @for (item of allRecipes; track $index) {
+                    <div class="col-md-4 text-center p-5">
+                        <img [src]="item.image" alt="" class="rounded-3  " width="100%" height="300px">
+                        <p class="text-center mt-3">{{item.name}}</p>
+                    </div>
+                   }
+                }
+                @else {
+                    <h2>No items to show.....</h2>
+                }
+
+               
+                
+            </div>
+
+            <div class="row w-100 p-5 rounded " style="background-image: url('https://png.pngtree.com/back_origin_pic/05/05/68/52e6ab3fde77ad0a01b5d03c03e982f8.jpg');background-repeat: no-repeat; background-position: center;background-size: cover;">
+                <div class="col-md-6">
+                    <div class="bg-white p-4 rounded w-75">
+                        <h2>50+ Recipes That are <br> Very quick and Fast</h2>
+                        <p class="text-secondary">Find the perfect ideas to start yoour day with the quick and easiest way</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+
+            <!-- banner -->
+
+            <div class="row w-100 p-5 bg-success rounded-3 mt-5">
+                <div class="col-md-6">
+                    <img src="pc-image.png" alt="noimage" class="w-100">
+                </div>
+                <div class="col-md-6 text-center d-flex flex-column justify-content-center ">
+                    <h2 class="text-light">Download App</h2>
+                    <p class="text-light">Download the app from google playstore <br> or appstore for better experience</p>
+                    <div class="d-flex justify-content-center align-items-center gap-3">
+                        <img src="https://cdn.pixabay.com/photo/2021/09/22/16/07/google-play-6647242_1280.png" alt="" style="width: 150px; height: 130px;">
+                        <img src="https://logos-world.net/wp-content/uploads/2021/02/App-Store-Symbol.png" alt=""style="width: 150px; height: 150px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- testimonial -->
+
+           <div class="text-center my-5">
+            <h1>Client Testimonials</h1>
+            <marquee >
+                <div class="d-flex my-5">
+                    @for (item of approvedTestimonials; track $index) {
+                        <div class="rounded border w-100 p-3 me-2">
+                            <h5>{{item.name}}</h5>
+                            <p class="white-space:normal; width:100% text-align:justify">{{item.message}}</p>
+                        </div>
+                    }
+                   
+                </div>
+            </marquee>
+           </div>
+          
+       </div>
+  

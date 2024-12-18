@@ -1,0 +1,114 @@
+<app-header></app-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 p-5">
+
+            <h4>Filter</h4>
+
+            <!-- cusisine types -->
+
+           <div class="mt-5"> 
+            <button class="btn" (click)="getAllRecipes()">All</button><br>
+
+
+            <button class="btn dropdown-toggle " type="button" data-bs-toggle="collapse" data-bs-target="#cuisineType" aria-expanded="false" aria-controls="cuisineType">Cuisine Type
+              </button><br>
+              <div class="collapse" id="cuisineType">
+               <button class="btn" (click)="filterCuisineType('Italian')">
+                Italian
+               </button>
+               <button class="btn" (click)="filterCuisineType('Asian')">
+                Asian
+               </button>
+               <button class="btn" (click)="filterCuisineType('American')">
+                American
+               </button>
+               <button class="btn" (click)="filterCuisineType('Mexican')">
+                Mexican
+               </button>
+               <button class="btn" (click)="filterCuisineType('Pakistani')">
+                Pakistani
+               </button>
+               <button class="btn" (click)="filterCuisineType('Japanese')">
+                Japanese
+               </button>
+               <button class="btn" (click)="filterCuisineType('Thai')">
+                Thai
+               </button>
+               <button class="btn" (click)="filterCuisineType('Indian')">
+                Indian
+               </button>
+               <button class="btn" (click)="filterCuisineType('Turkish')">
+                Turkish
+               </button>
+               <button class="btn" (click)="filterCuisineType('Smoothie')">
+                Smoothie
+               </button>
+              </div>
+
+              <!-- meal type -->
+              <button class="btn dropdown-toggle " type="button" data-bs-toggle="collapse" data-bs-target="#MealType" aria-expanded="false" aria-controls="cuisineType">Meal Type
+            </button><br>
+            <div class="collapse" id="MealType">
+             <button class="btn" (click)="fitlerMealtType('Dinner')">
+              Dinner
+             </button>
+             <button class="btn" (click)="fitlerMealtType('Lunch')">
+              Lunch
+             </button>
+             <button class="btn" (click)="fitlerMealtType('Snacks')">
+              Snacks
+             </button>
+             <button class="btn" (click)="fitlerMealtType('Desert')">
+              Desert
+             </button>
+             <button class="btn" (click)="fitlerMealtType('Appetizer')">
+              Appetizer
+             </button>
+             <button class="btn" (click)="fitlerMealtType('Breakfast')">
+              Breakfast
+             </button>
+             <button class="btn" (click)="fitlerMealtType('Beverage')">
+              Beverage
+             </button>
+             <button class="btn" (click)="fitlerMealtType('Salad')">
+              Salad
+             </button>
+            </div>
+
+           </div>
+            
+        </div>
+        <!-- right side -->
+        <div class="col-md-8 mt-5">
+            <div class="d-flex justify-content-between">
+                <h1>All Recipes</h1>
+                <input [(ngModel)]="searchKey" type="text" placeholder="search recipe here!" class="form-control w-50">
+            </div>
+            <div class="row">
+               @if (allRecipes.length>0) {
+                @for (item of allRecipes | search:searchKey | paginate: { itemsPerPage: 6, currentPage: p }; track $index) {
+                    <div class="col-md-4 py-5 px-5">
+                        <img routerLink="/view-recipe/{{item._id}}" [src]="item.image" alt="" width="100%" height="200px" class="rounded"  >
+                        <h4>{{item.name}}</h4>
+                        <p>Cuisine : {{item.cuisine}}</p>
+                    </div>
+                }
+                <!-- @if (allRecipes | search:searchKey) {
+                    <h2 class="mt-5 text-center" style="color: red;">No recipes to show...</h2>
+                } -->
+               }
+               
+               @else {
+                <h2>No recipes to show...</h2>
+               }
+                
+            </div>
+
+            <!-- pagination -->
+           <div class="text-center "> <pagination-controls (pageChange)="p = $event" class="my-pagination"></pagination-controls></div>
+        </div>
+    </div>
+</div>
+
