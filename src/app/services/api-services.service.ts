@@ -8,7 +8,8 @@ import { subscribeOn } from 'rxjs';
 })
 export class ApiServicesService {
 
-  serverUrl: string = 'http://localhost:4009'
+  // serverUrl: string = 'http://localhost:4009'
+  serverUrl: string = 'https://cookbook-server-tle1.onrender.com'
 
   constructor(private http: HttpClient) { }
 
